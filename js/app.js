@@ -138,7 +138,7 @@ function Transaction (nomInitiateur){  //On est obligé de savoir qui a fait la 
 
 
 //Code du TPF04
-//Changement de café par un commandeur
+//Partie 1 - Changement de café par un commandeur 
 var commandeur = prompt("Bonjour, quel est votre nom?");
 var result = window.confirm(commandeur +", voulez-vous changer votre commande de café?");
 
@@ -146,18 +146,25 @@ if (result = true){
     prompt("Parfait, procédons au changement de votre commande.");
 }
 
-//Lorsque le dernier café est commandé, termine la transaction automatiquement
+//Partie 2 - Lorsque le dernier café est commandé, termine la transaction automatiquement
 
-//Permettre l'affichage de l'intervalle de temps écoulé lors de la transaction
+//Partie 3 - Permettre l'affichage de l'intervalle de temps écoulé lors de la transaction
     //Retourner une chaine de caractères au format « [de date début] à [date fin] ».
     //Assurez-vous de formater votre chaine de caractères afin qu'elle soit facile à lire
 
-//Lors de la création d'une transaction par l'initiateur, le système doit lui permettre de passer sa commande immédiatement s'il le désire.
+var heure = new Date();
+document.write("Date de début de la transaction :")
+document.write(heure.getHours()+":"+heure.getMinutes()+":"+heure.getSeconds())
+
+document.write("Date de fin de la transaction :")
+document.write(endTransaction.getHours()+":"+endTransaction.getMinutes()+":"+endTransaction.getSeconds())
+
+//Partie 4 - Lors de la création d'une transaction par l'initiateur, le système doit lui permettre de passer sa commande immédiatement s'il le désire.
     //Utiliser un prompt pour savoir s'il veut passer sa commande immmédiatement.
 //Objets de type « Transaction »
 function Transaction (nomInitiateur){  //On est obligé de savoir qui a fait la nouvelle transaction
     passerCommande = promt("Bonjour, souhaitez-vous passer votre commande immmédiatement?");
-    
+
     this.listeCommande = []; //0 à plusieurs commandes de cafés
     this.nomInitiateur = nomInitiateur;
     this.debutTransaction = new Date(); //Date = un objet fourni par JS... donc new Date donne la date actuelle sur le poste client
